@@ -1,19 +1,19 @@
 # FatAndGo
 
-Repository for [fatandgo.es](https://fatandgo.es).
+Repositorio de [fatandgo.es](https://fatandgo.es).
 
-The site is currently showing a designed “We're cooking...” teaser while the full Fat&Go experience is being prepared.
+La web muestra actualmente el teaser “Estamos cocinaos...” mientras preparamos la experiencia completa de Fat&Go.
 
-## Local preview
+## Vista previa local
 
-Serve the repository root with any static HTTP server, for example:
+Sirve la raíz del repositorio con cualquier servidor HTTP estático, por ejemplo:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-Then open <http://localhost:8000>.
+Después, abre <http://localhost:8000>.
 
-## Deployment
+## Despliegue
 
-Changes pushed to `main` are published to GitHub Pages by `.github/workflows/pages.yml`.
+Los cambios enviados a `main` se publican en GitHub Pages mediante `.github/workflows/pages.yml`.
