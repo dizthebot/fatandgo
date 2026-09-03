@@ -177,14 +177,13 @@
     }
 
     h1 {
-      max-width: 12ch;
+      max-width: 100%;
       margin: 0 auto;
-      font-size: clamp(3.1rem, 10.5vw, 9.5rem);
+      font-size: clamp(2.5rem, 10vw, 7.5rem);
       font-weight: 900;
       letter-spacing: -0.075em;
       line-height: 0.8;
       text-transform: uppercase;
-      text-wrap: balance;
       transform: rotate(-0.65deg);
     }
 
@@ -195,7 +194,9 @@
     }
 
     .cooking {
+      display: block;
       color: var(--red);
+      white-space: nowrap;
     }
 
     .footer {
