@@ -248,7 +248,7 @@
     }
 
     .team-inner {
-      width: min(1280px, 100%);
+      width: min(1360px, 100%);
       margin: 0 auto;
     }
 
@@ -342,8 +342,8 @@
 
     .board {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: clamp(1.25rem, 2.5vw, 2.2rem);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(1.6rem, 3vw, 3rem);
     }
 
     .executive-card {
@@ -351,7 +351,7 @@
       display: flex;
       flex-direction: column;
       min-width: 0;
-      padding: clamp(1rem, 2.2vw, 1.6rem);
+      padding: clamp(1.25rem, 2.6vw, 2.4rem);
       color: var(--ink);
       background: var(--paper);
       border: 4px solid var(--ink);
@@ -385,13 +385,13 @@
     .portrait {
       display: grid;
       place-items: center;
-      width: clamp(5.5rem, 9vw, 7.5rem);
+      width: clamp(7.5rem, 13vw, 11rem);
       aspect-ratio: 1;
       color: var(--paper);
       background: var(--red);
       border: 4px solid var(--ink);
       border-radius: 50%;
-      font-size: clamp(1.55rem, 3vw, 2.5rem);
+      font-size: clamp(2rem, 4vw, 3.4rem);
       letter-spacing: -0.08em;
       overflow: hidden;
       transform: rotate(-4deg);
@@ -412,7 +412,7 @@
 
     .employee-id {
       font-family: "Courier New", Courier, monospace;
-      font-size: 0.7rem;
+      font-size: clamp(0.72rem, 1vw, 0.9rem);
       font-weight: 900;
       letter-spacing: 0.08em;
       line-height: 1.45;
@@ -430,7 +430,7 @@
 
     .executive-card h3 {
       margin: 0;
-      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      font-size: clamp(2.1rem, 4.2vw, 3.7rem);
       letter-spacing: -0.065em;
       line-height: 0.92;
       text-transform: uppercase;
@@ -441,7 +441,7 @@
       margin: 0.65rem 0 1rem;
       color: var(--red);
       font-family: "Courier New", Courier, monospace;
-      font-size: 0.82rem;
+      font-size: clamp(0.9rem, 1.3vw, 1.05rem);
       font-weight: 900;
       line-height: 1.35;
       text-transform: uppercase;
@@ -454,7 +454,7 @@
       padding: 1rem 0;
       border-block: 2px dashed var(--ink);
       font-family: "Courier New", Courier, monospace;
-      font-size: 0.82rem;
+      font-size: clamp(0.9rem, 1.2vw, 1rem);
       line-height: 1.4;
     }
 
@@ -487,7 +487,7 @@
       background: var(--red);
       border: 2px solid var(--ink);
       font-family: "Courier New", Courier, monospace;
-      font-size: 0.68rem;
+      font-size: clamp(0.72rem, 1vw, 0.86rem);
       font-weight: 900;
     }
 
@@ -499,7 +499,7 @@
     .executive-card blockquote {
       margin: auto 0 0;
       padding-top: 1rem;
-      font-size: 0.95rem;
+      font-size: clamp(1.05rem, 1.45vw, 1.3rem);
       font-style: italic;
       font-weight: 900;
       line-height: 1.35;
@@ -582,9 +582,7 @@
         align-items: start;
       }
 
-      .board {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+
     }
 
     @media (max-width: 680px) {
