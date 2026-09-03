@@ -181,74 +181,22 @@
       margin: 0 auto;
       font-size: clamp(3.1rem, 10.5vw, 9.5rem);
       font-weight: 900;
-      letter-spacing: -0.085em;
+      letter-spacing: -0.075em;
       line-height: 0.8;
       text-transform: uppercase;
       text-wrap: balance;
+      transform: rotate(-0.65deg);
     }
 
-    h1 span {
-      position: relative;
+    .apostrophe {
       display: inline-block;
+      margin-right: 0.08em;
+      letter-spacing: 0;
+    }
+
+    .cooking {
       color: var(--red);
     }
-
-    h1 > span::after {
-      content: "";
-      position: absolute;
-      right: 0.02em;
-      bottom: -0.08em;
-      left: 0.02em;
-      height: 0.085em;
-      background: var(--yellow);
-      border: max(2px, 0.02em) solid var(--ink);
-      transform: rotate(-1.5deg);
-      z-index: -1;
-    }
-
-    .dots span {
-      display: inline-block;
-      animation: bounce 1.25s ease-in-out infinite;
-    }
-
-    .dots span:nth-child(2) {
-      animation-delay: 0.13s;
-    }
-
-    .dots span:nth-child(3) {
-      animation-delay: 0.26s;
-    }
-
-    .subline {
-      max-width: 36rem;
-      margin: clamp(1.5rem, 3.5vw, 2.7rem) auto 0;
-      color: var(--muted);
-      font-family: "Courier New", Courier, monospace;
-      font-size: clamp(0.8rem, 1.5vw, 1.05rem);
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      line-height: 1.5;
-      text-transform: uppercase;
-    }
-
-    .grill {
-      display: flex;
-      justify-content: center;
-      gap: clamp(0.35rem, 1vw, 0.75rem);
-      margin-top: clamp(1.5rem, 4vw, 3rem);
-    }
-
-    .grill span {
-      width: clamp(1.8rem, 5vw, 3.8rem);
-      height: 0.55rem;
-      background: var(--ink);
-      animation: heat 1.6s ease-in-out infinite;
-    }
-
-    .grill span:nth-child(2) { animation-delay: 0.12s; }
-    .grill span:nth-child(3) { animation-delay: 0.24s; }
-    .grill span:nth-child(4) { animation-delay: 0.36s; }
-    .grill span:nth-child(5) { animation-delay: 0.48s; }
 
     .footer {
       justify-content: center;
@@ -573,15 +521,6 @@
       50% { opacity: 0.25; }
     }
 
-    @keyframes bounce {
-      0%, 65%, 100% { transform: translateY(0); }
-      35% { transform: translateY(-0.12em); }
-    }
-
-    @keyframes heat {
-      0%, 100% { background: var(--ink); transform: scaleY(1); }
-      50% { background: var(--red); transform: scaleY(1.55); }
-    }
 
     @media (max-width: 520px) {
       .topbar {
@@ -661,11 +600,7 @@
     <div class="hero-main">
       <section class="ticket" aria-labelledby="page-title">
         <p class="eyebrow">Pedido n.º 0001 · Próximamente</p>
-        <h1 id="page-title">'Tamos <span>cocinaos<span class="dots" aria-hidden="true"><span>.</span><span>.</span><span>.</span></span></span></h1>
-        <p class="subline">La plancha está caliente. El menú sigue siendo confidencial.</p>
-        <div class="grill" aria-hidden="true">
-          <span></span><span></span><span></span><span></span><span></span>
-        </div>
+        <h1 id="page-title"><span class="apostrophe">'</span>Tamos <span class="cooking">cocinaos...</span></h1>
       </section>
     </div>
 
