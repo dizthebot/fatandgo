@@ -121,7 +121,7 @@
       animation: blink 1.4s steps(2, end) infinite;
     }
 
-    main {
+    .hero-main {
       display: grid;
       place-items: center;
       padding: clamp(2rem, 5vw, 5rem) 1rem;
@@ -642,12 +642,14 @@
       *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
 </head>
 <body>
-  <div class="page">
+  <main>
+    <div class="page">
     <header class="topbar">
       <div class="brand">FAT&amp;GO</div>
       <div class="status">
@@ -656,7 +658,7 @@
       </div>
     </header>
 
-    <main>
+    <div class="hero-main">
       <section class="ticket" aria-labelledby="page-title">
         <p class="eyebrow">Pedido n.º 0001 · Próximamente</p>
         <h1 id="page-title">'Tamos <span>cocinaos<span class="dots" aria-hidden="true"><span>.</span><span>.</span><span>.</span></span></span></h1>
@@ -665,13 +667,13 @@
           <span></span><span></span><span></span><span></span><span></span>
         </div>
       </section>
-    </main>
+    </div>
 
     <footer class="footer">Comida rápida. Decisiones lentas. © Fat&amp;Go</footer>
-  </div>
+    </div>
 
-  <section class="team" aria-labelledby="team-title">
-    <div class="team-inner">
+    <section class="team" aria-labelledby="team-title">
+      <div class="team-inner">
       <header class="team-heading">
         <div>
           <p class="section-kicker">Organigrama oficial · Sin supervisión</p>
@@ -774,8 +776,9 @@
       </div>
 
       <p class="disclaimer">Fat&amp;Go no se responsabiliza de las opiniones de su junta directiva. Tampoco sabe cómo despedirla.</p>
-    </div>
-  </section>
+      </div>
+    </section>
+  </main>
 
   <footer class="site-footer">Corporación Fat&amp;Go · Todos los derechos probablemente reservados</footer>
 </body>
