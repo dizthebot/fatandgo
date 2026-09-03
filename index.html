@@ -206,6 +206,19 @@
       text-align: center;
     }
 
+    .hero-footer {
+      padding: 0 1rem clamp(1.25rem, 2.5vw, 2rem);
+      text-align: center;
+    }
+
+    .hero-footer .eyebrow {
+      margin: 0 0 0.8rem;
+    }
+
+    .hero-footer .footer {
+      padding: 0;
+    }
+
     .team {
       position: relative;
       padding: clamp(4.5rem, 9vw, 9rem) clamp(1rem, 4vw, 4rem);
@@ -380,7 +393,15 @@
       border-radius: 50%;
       font-size: clamp(1.55rem, 3vw, 2.5rem);
       letter-spacing: -0.08em;
+      overflow: hidden;
       transform: rotate(-4deg);
+    }
+
+    .portrait img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .executive-card:nth-child(2n) .portrait {
@@ -600,12 +621,14 @@
 
     <div class="hero-main">
       <section class="ticket" aria-labelledby="page-title">
-        <p class="eyebrow">Pedido n.º 0001 · Próximamente</p>
         <h1 id="page-title"><span class="apostrophe">'</span>Tamos <span class="cooking">cocinaos...</span></h1>
       </section>
     </div>
 
-    <footer class="footer">Comida rápida. Decisiones lentas. © Fat&amp;Go</footer>
+    <div class="hero-footer">
+      <p class="eyebrow">Pedido n.º 0001 · Próximamente</p>
+      <footer class="footer">Comida rápida. Decisiones lentas. © Fat&amp;Go</footer>
+    </div>
     </div>
 
     <section class="team" aria-labelledby="team-title">
@@ -640,7 +663,7 @@
 
         <article class="executive-card">
           <div class="card-top">
-            <div class="portrait" aria-hidden="true">02</div>
+            <div class="portrait"><img src="assets/junta/analista.webp" alt=""></div>
             <div class="employee-id">Expediente 002<span>Diversificando</span></div>
           </div>
           <h3>El analista</h3>
@@ -654,7 +677,7 @@
 
         <article class="executive-card">
           <div class="card-top">
-            <div class="portrait" aria-hidden="true">03</div>
+            <div class="portrait"><img src="assets/junta/estratega.webp" alt=""></div>
             <div class="employee-id">Expediente 003<span>Depende del día</span></div>
           </div>
           <h3>El estratega</h3>
@@ -669,7 +692,7 @@
 
         <article class="executive-card">
           <div class="card-top">
-            <div class="portrait" aria-hidden="true">04</div>
+            <div class="portrait"><img src="assets/junta/implacable.webp" alt=""></div>
             <div class="employee-id">Expediente 004<span>Buscando becarios</span></div>
           </div>
           <h3>El implacable</h3>
@@ -683,7 +706,7 @@
 
         <article class="executive-card">
           <div class="card-top">
-            <div class="portrait" aria-hidden="true">05</div>
+            <div class="portrait"><img src="assets/junta/escalador.webp" alt=""></div>
             <div class="employee-id">Expediente 005<span>Colgado</span></div>
           </div>
           <h3>El escalador</h3>
