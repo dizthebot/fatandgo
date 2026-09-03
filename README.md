@@ -2,7 +2,7 @@
 
 Repositorio de [fatandgo.es](https://fatandgo.es).
 
-La web muestra actualmente el teaser “Estamos cocinaos...” mientras preparamos la experiencia completa de Fat&Go.
+La web presenta el teaser “'Tamos cocinaos...” y la junta directiva ficticia de Fat&Go mientras preparamos la experiencia completa.
 
 ## Vista previa local
 
