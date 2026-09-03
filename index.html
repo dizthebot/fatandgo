@@ -1,15 +1,328 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4e6c5">
+  <meta name="description" content="Fat&amp;Go is cooking. Something hot is coming soon.">
   <meta name="robots" content="noindex">
-  <title>FatAndGo</title>
+  <title>Fat&amp;Go — We're cooking...</title>
+  <style>
+    :root {
+      --cream: #f4e6c5;
+      --paper: #fff7df;
+      --red: #df2c1f;
+      --yellow: #f5b82e;
+      --ink: #1d1a16;
+      --muted: #655b4d;
+      --border: clamp(3px, 0.4vw, 6px);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+      margin: 0;
+    }
+
+    body {
+      min-width: 320px;
+      color: var(--ink);
+      background-color: var(--cream);
+      background-image:
+        linear-gradient(45deg, rgba(223, 44, 31, 0.055) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(223, 44, 31, 0.055) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(223, 44, 31, 0.055) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(223, 44, 31, 0.055) 75%);
+      background-position: 0 0, 0 11px, 11px -11px, -11px 0;
+      background-size: 22px 22px;
+      font-family: Arial Black, Arial, Helvetica, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .page {
+      position: relative;
+      min-height: 100svh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .page::before,
+    .page::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: clamp(180px, 28vw, 430px);
+      aspect-ratio: 1;
+      border: var(--border) solid var(--ink);
+      background: var(--yellow);
+      border-radius: 50%;
+    }
+
+    .page::before {
+      top: clamp(-220px, -14vw, -100px);
+      left: clamp(-190px, -10vw, -70px);
+    }
+
+    .page::after {
+      right: clamp(-210px, -12vw, -95px);
+      bottom: clamp(-230px, -15vw, -110px);
+      background: var(--red);
+    }
+
+    .topbar,
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: clamp(1.15rem, 2.2vw, 2rem) clamp(1rem, 4vw, 4rem);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: clamp(0.68rem, 1vw, 0.82rem);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 8.4rem;
+      padding: 0.65rem 1rem 0.6rem;
+      color: var(--paper);
+      background: var(--red);
+      border: 3px solid var(--ink);
+      border-radius: 999px;
+      box-shadow: 4px 4px 0 var(--ink);
+      font-size: 1.1rem;
+      font-style: italic;
+      letter-spacing: -0.05em;
+      line-height: 1;
+      transform: rotate(-2deg);
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-weight: 900;
+    }
+
+    .status-dot {
+      width: 0.7rem;
+      aspect-ratio: 1;
+      background: var(--red);
+      border: 2px solid var(--ink);
+      border-radius: 50%;
+      animation: blink 1.4s steps(2, end) infinite;
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+      padding: clamp(2rem, 5vw, 5rem) 1rem;
+    }
+
+    .ticket {
+      position: relative;
+      width: min(920px, calc(100vw - 2rem));
+      padding: clamp(2.4rem, 7vw, 6.5rem) clamp(1.15rem, 6vw, 5.5rem);
+      text-align: center;
+      background: var(--paper);
+      border: var(--border) solid var(--ink);
+      box-shadow: clamp(8px, 1.2vw, 16px) clamp(8px, 1.2vw, 16px) 0 var(--ink);
+      transform: rotate(-0.65deg);
+    }
+
+    .ticket::before,
+    .ticket::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: clamp(24px, 5vw, 54px);
+      aspect-ratio: 1;
+      background: var(--cream);
+      border: var(--border) solid var(--ink);
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+
+    .ticket::before {
+      left: 0;
+      border-left: 0;
+      border-radius: 0 50% 50% 0;
+    }
+
+    .ticket::after {
+      right: 0;
+      border-right: 0;
+      border-radius: 50% 0 0 50%;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin: 0 0 1.2rem;
+      padding: 0.45rem 0.7rem;
+      color: var(--paper);
+      background: var(--ink);
+      font-size: clamp(0.64rem, 1.2vw, 0.85rem);
+      letter-spacing: 0.14em;
+      line-height: 1;
+      text-transform: uppercase;
+      transform: rotate(1.5deg);
+    }
+
+    h1 {
+      max-width: 12ch;
+      margin: 0 auto;
+      font-size: clamp(3.1rem, 10.5vw, 9.5rem);
+      font-weight: 900;
+      letter-spacing: -0.085em;
+      line-height: 0.8;
+      text-transform: uppercase;
+      text-wrap: balance;
+    }
+
+    h1 span {
+      position: relative;
+      display: inline-block;
+      color: var(--red);
+    }
+
+    h1 > span::after {
+      content: "";
+      position: absolute;
+      right: 0.02em;
+      bottom: -0.08em;
+      left: 0.02em;
+      height: 0.085em;
+      background: var(--yellow);
+      border: max(2px, 0.02em) solid var(--ink);
+      transform: rotate(-1.5deg);
+      z-index: -1;
+    }
+
+    .dots span {
+      display: inline-block;
+      animation: bounce 1.25s ease-in-out infinite;
+    }
+
+    .dots span:nth-child(2) {
+      animation-delay: 0.13s;
+    }
+
+    .dots span:nth-child(3) {
+      animation-delay: 0.26s;
+    }
+
+    .subline {
+      max-width: 36rem;
+      margin: clamp(1.5rem, 3.5vw, 2.7rem) auto 0;
+      color: var(--muted);
+      font-family: "Courier New", Courier, monospace;
+      font-size: clamp(0.8rem, 1.5vw, 1.05rem);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .grill {
+      display: flex;
+      justify-content: center;
+      gap: clamp(0.35rem, 1vw, 0.75rem);
+      margin-top: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .grill span {
+      width: clamp(1.8rem, 5vw, 3.8rem);
+      height: 0.55rem;
+      background: var(--ink);
+      animation: heat 1.6s ease-in-out infinite;
+    }
+
+    .grill span:nth-child(2) { animation-delay: 0.12s; }
+    .grill span:nth-child(3) { animation-delay: 0.24s; }
+    .grill span:nth-child(4) { animation-delay: 0.36s; }
+    .grill span:nth-child(5) { animation-delay: 0.48s; }
+
+    .footer {
+      justify-content: center;
+      font-family: "Courier New", Courier, monospace;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0.25; }
+    }
+
+    @keyframes bounce {
+      0%, 65%, 100% { transform: translateY(0); }
+      35% { transform: translateY(-0.12em); }
+    }
+
+    @keyframes heat {
+      0%, 100% { background: var(--ink); transform: scaleY(1); }
+      50% { background: var(--red); transform: scaleY(1.55); }
+    }
+
+    @media (max-width: 520px) {
+      .topbar {
+        align-items: flex-start;
+      }
+
+      .status {
+        max-width: 9rem;
+        justify-content: flex-end;
+        text-align: right;
+      }
+
+      .ticket {
+        box-shadow: 7px 7px 0 var(--ink);
+      }
+
+      .footer {
+        padding-bottom: 1.25rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
 </head>
 <body>
-  <main>
-    <h1>FatAndGo</h1>
-    <p>Infraestructura preparada. Web pendiente de construcción.</p>
-  </main>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand" aria-label="Fat and Go">FAT&amp;GO</div>
+      <div class="status">
+        <span class="status-dot" aria-hidden="true"></span>
+        Kitchen in progress
+      </div>
+    </header>
+
+    <main>
+      <section class="ticket" aria-labelledby="page-title">
+        <p class="eyebrow">Order no. 0001 · Coming soon</p>
+        <h1 id="page-title">We're <span>cooking<span class="dots" aria-hidden="true"><span>.</span><span>.</span><span>.</span></span></span></h1>
+        <p class="subline">The grill is hot. The menu is still classified.</p>
+        <div class="grill" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">Fast food. Slow decisions. © Fat&amp;Go</footer>
+  </div>
 </body>
 </html>
