@@ -99,13 +99,13 @@
 
     .kicker {
       display: inline-block;
-      margin: 0 0 1rem;
-      padding: 0.45rem 0.7rem;
+      margin: 0 0 clamp(1.5rem, 3vw, 2.4rem);
+      padding: 0.55rem 0.8rem;
       color: var(--ink);
       background: var(--yellow);
       border: 3px solid var(--ink);
       font-family: "Courier New", Courier, monospace;
-      font-size: clamp(0.68rem, 1.1vw, 0.82rem);
+      font-size: clamp(0.76rem, 1.25vw, 1rem);
       font-weight: 900;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -133,9 +133,35 @@
 
     .description strong { color: var(--red); }
 
+    .chef-quote {
+      margin: clamp(1.3rem, 3vw, 2.2rem) 0 0;
+      padding: clamp(1rem, 2.5vw, 1.6rem);
+      color: var(--paper);
+      background: var(--red);
+      border: 4px solid var(--ink);
+      box-shadow: 6px 6px 0 var(--yellow);
+      font-size: clamp(1.25rem, 2.4vw, 2rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      transform: rotate(0.45deg);
+    }
+
+    .chef-quote p {
+      margin: 0;
+    }
+
+    .chef-quote figcaption {
+      margin-top: 0.9rem;
+      font-family: "Courier New", Courier, monospace;
+      font-size: clamp(0.72rem, 1vw, 0.9rem);
+      font-weight: 900;
+      letter-spacing: 0.1em;
+    }
+
     .meta {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 0.8rem;
       margin: clamp(1.5rem, 3vw, 2.5rem) 0 0;
       padding: 0;
@@ -182,9 +208,12 @@
       <article class="dish-ticket">
         <p class="kicker">Plato oficial del motorista · Servicio 04:00 AM</p>
         <h1>Avión Solo en Salsa de Madrugada</h1>
-        <p class="description">Un único avión, servido sobre <strong>silencio incómodo de terraza</strong>, con reducción de aeropuerto imaginario y la tranquilidad de quien está completamente en su salsa.</p>
+        <p class="description">Un único avión, servido sobre <strong>silencio incómodo de terraza</strong>, con reducción de aeropuerto imaginario y la tranquilidad de quien acaba de descubrir la aviación.</p>
+        <figure class="chef-quote">
+          <p>“Aquí hay mucho tráfico aéreo, debe de haber un aeropuerto cerca.”</p>
+          <figcaption>— El motorista, chef en su salsa</figcaption>
+        </figure>
         <ul class="meta" aria-label="Detalles del plato">
-          <li><span>Maridaje</span>MT-07 al ralentí</li>
           <li><span>Alérgeno</span>Confianza sin datos</li>
           <li><span>Observación</span>Aquí hay tráfico aéreo</li>
         </ul>
