@@ -160,9 +160,9 @@
     }
 
     .meta {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 0.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
       margin: clamp(1.5rem, 3vw, 2.5rem) 0 0;
       padding: 0;
       list-style: none;
@@ -172,16 +172,29 @@
     }
 
     .meta li {
-      padding: 0.8rem;
-      background: var(--cream);
-      border: 3px solid var(--ink);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .meta span {
-      display: block;
       color: var(--muted);
       font-size: 0.72rem;
       letter-spacing: 0.08em;
+    }
+
+    .allergen-icon {
+      display: inline-grid;
+      place-items: center;
+      width: 2rem;
+      aspect-ratio: 1;
+      color: var(--ink);
+      background: var(--yellow);
+      border: 3px solid var(--ink);
+      border-radius: 50%;
+      font-family: Arial Black, Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      line-height: 1;
     }
 
     .footer {
@@ -192,7 +205,6 @@
     @media (max-width: 680px) {
       .topbar { align-items: flex-start; }
       .dish-ticket { padding: clamp(1.2rem, 6vw, 1.8rem); }
-      .meta { grid-template-columns: 1fr; }
       h1 { font-size: clamp(2.35rem, 12vw, 3.4rem); }
     }
   </style>
@@ -213,8 +225,8 @@
           <p>“Aquí hay mucho tráfico aéreo, debe de haber un aeropuerto cerca.”</p>
           <figcaption>— El motorista, chef en su salsa</figcaption>
         </figure>
-        <ul class="meta" aria-label="Detalles del plato">
-          <li><span>Alérgeno</span>Confianza sin datos</li>
+        <ul class="meta" aria-label="Alérgenos del plato">
+          <li><span class="allergen-icon" aria-hidden="true">!</span><span>Alérgenos</span>Confianza sin datos</li>
         </ul>
       </article>
     </main>
