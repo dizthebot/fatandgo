@@ -436,6 +436,17 @@
       text-transform: uppercase;
     }
 
+    .executive-card h3 a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .executive-card h3 a:hover,
+    .executive-card h3 a:focus-visible {
+      color: var(--red);
+      outline: none;
+    }
+
     .role {
       min-height: 3.2em;
       margin: 0.65rem 0 1rem;
@@ -472,6 +483,31 @@
       margin: 0;
       color: var(--muted);
       font-weight: 700;
+    }
+
+    .dish-link {
+      display: inline-block;
+      align-self: flex-start;
+      margin-top: 1rem;
+      padding: 0.45rem 0.6rem;
+      color: var(--ink);
+      background: var(--yellow);
+      border: 3px solid var(--ink);
+      box-shadow: 4px 4px 0 var(--red);
+      font-family: "Courier New", Courier, monospace;
+      font-size: clamp(0.72rem, 1vw, 0.88rem);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transform: rotate(-0.7deg);
+    }
+
+    .dish-link:hover,
+    .dish-link:focus-visible {
+      color: var(--paper);
+      background: var(--ink);
+      outline: none;
     }
 
     .mode-switch {
@@ -650,13 +686,14 @@
             <div class="portrait" aria-hidden="true">01</div>
             <div class="employee-id">Expediente 001<span>Calentando motor</span></div>
           </div>
-          <h3>El motorista</h3>
+          <h3><a href="platos/avion-solo-en-salsa-de-madrugada.html">El motorista</a></h3>
           <p class="role">Director de Combustión, Reparto y Control de Derrames</p>
           <dl class="profile">
             <div><dt>Especialidad</dt><dd>Roncar como una MT-07 y aplicar ingeniería de frenado a cualquier fuga.</dd></div>
             <div><dt>Proyecto actual</dt><dd>Homologar el protocolo de pellizco preventivo como sistema oficial anti-derrame.</dd></div>
             <div><dt>Estado</dt><dd>Ralentí nocturno no homologado.</dd></div>
           </dl>
+          <a class="dish-link" href="platos/avion-solo-en-salsa-de-madrugada.html">Plato: Avión Solo</a>
           <blockquote>No estoy roncando, estoy carburando.”</blockquote>
         </article>
 

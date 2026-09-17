@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4e6c5">
+  <meta name="description" content="Avión Solo en Salsa de Madrugada, plato oficial del motorista de Fat&amp;Go.">
+  <meta name="robots" content="noindex">
+  <title>Fat&amp;Go — Avión Solo en Salsa de Madrugada</title>
+  <style>
+    :root {
+      --cream: #f4e6c5;
+      --paper: #fff7df;
+      --red: #d1261b;
+      --yellow: #f5b82e;
+      --ink: #1d1a16;
+      --muted: #655b4d;
+      --border: clamp(3px, 0.45vw, 6px);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-width: 320px;
+      min-height: 100svh;
+      margin: 0;
+      color: var(--ink);
+      background-color: var(--cream);
+      background-image:
+        linear-gradient(45deg, rgba(209, 38, 27, 0.055) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(209, 38, 27, 0.055) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(209, 38, 27, 0.055) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(209, 38, 27, 0.055) 75%);
+      background-position: 0 0, 0 11px, 11px -11px, -11px 0;
+      background-size: 22px 22px;
+      font-family: Arial Black, Arial, Helvetica, sans-serif;
+    }
+
+    .page {
+      min-height: 100svh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      overflow: hidden;
+    }
+
+    .topbar,
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: clamp(1rem, 2.2vw, 2rem) clamp(1rem, 4vw, 4rem);
+      font-family: "Courier New", Courier, monospace;
+      font-size: clamp(0.68rem, 1vw, 0.82rem);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem 1rem 0.6rem;
+      color: var(--paper);
+      background: var(--red);
+      border: 3px solid var(--ink);
+      border-radius: 999px;
+      box-shadow: 4px 4px 0 var(--ink);
+      font-family: Arial Black, Arial, Helvetica, sans-serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      letter-spacing: -0.05em;
+      line-height: 1;
+      text-decoration: none;
+      transform: rotate(-2deg);
+    }
+
+    .back-link {
+      color: var(--ink);
+      text-decoration-thickness: 0.18em;
+      text-underline-offset: 0.2em;
+    }
+
+    main {
+      display: grid;
+      place-items: center;
+      padding: clamp(2rem, 6vw, 6rem) 1rem;
+    }
+
+    .dish-ticket {
+      width: min(1020px, calc(100vw - 2rem));
+      padding: clamp(1.4rem, 5vw, 4.5rem);
+      background: var(--paper);
+      border: var(--border) solid var(--ink);
+      box-shadow: clamp(8px, 1.2vw, 16px) clamp(8px, 1.2vw, 16px) 0 var(--ink);
+      transform: rotate(-0.55deg);
+    }
+
+    .kicker {
+      display: inline-block;
+      margin: 0 0 1rem;
+      padding: 0.45rem 0.7rem;
+      color: var(--ink);
+      background: var(--yellow);
+      border: 3px solid var(--ink);
+      font-family: "Courier New", Courier, monospace;
+      font-size: clamp(0.68rem, 1.1vw, 0.82rem);
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transform: rotate(1deg);
+    }
+
+    h1 {
+      max-width: 11ch;
+      margin: 0;
+      color: var(--red);
+      font-size: clamp(3rem, 9.5vw, 8.5rem);
+      line-height: 0.78;
+      letter-spacing: -0.08em;
+      text-transform: uppercase;
+    }
+
+    .description {
+      max-width: 44rem;
+      margin: clamp(1.5rem, 3vw, 2.5rem) 0 0;
+      font-family: "Courier New", Courier, monospace;
+      font-size: clamp(1rem, 1.8vw, 1.35rem);
+      font-weight: 900;
+      line-height: 1.45;
+    }
+
+    .description strong { color: var(--red); }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin: clamp(1.5rem, 3vw, 2.5rem) 0 0;
+      padding: 0;
+      list-style: none;
+      font-family: "Courier New", Courier, monospace;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .meta li {
+      padding: 0.8rem;
+      background: var(--cream);
+      border: 3px solid var(--ink);
+    }
+
+    .meta span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+    }
+
+    .footer {
+      justify-content: center;
+      text-align: center;
+    }
+
+    @media (max-width: 680px) {
+      .topbar { align-items: flex-start; }
+      .dish-ticket { padding: clamp(1.2rem, 6vw, 1.8rem); }
+      .meta { grid-template-columns: 1fr; }
+      h1 { font-size: clamp(2.35rem, 12vw, 3.4rem); }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="../">FAT&amp;GO</a>
+      <a class="back-link" href="../#team-title">Volver a la junta</a>
+    </header>
+
+    <main>
+      <article class="dish-ticket">
+        <p class="kicker">Plato oficial del motorista · Servicio 04:00 AM</p>
+        <h1>Avión Solo en Salsa de Madrugada</h1>
+        <p class="description">Un único avión, servido sobre <strong>silencio incómodo de terraza</strong>, con reducción de aeropuerto imaginario y la tranquilidad de quien está completamente en su salsa.</p>
+        <ul class="meta" aria-label="Detalles del plato">
+          <li><span>Maridaje</span>MT-07 al ralentí</li>
+          <li><span>Alérgeno</span>Confianza sin datos</li>
+          <li><span>Observación</span>Aquí hay tráfico aéreo</li>
+        </ul>
+      </article>
+    </main>
+
+    <footer class="footer">Comida rápida. Decisiones lentas. © Fat&amp;Go</footer>
+  </div>
+</body>
+</html>
